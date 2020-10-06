@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Aplplication {
+public class Aplication {
     public static void main(String[] args) {
         ArrayList<User> users = new ArrayList<User>();
 
