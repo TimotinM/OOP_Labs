@@ -19,8 +19,8 @@ public class Text {
         sentences = sentencesCount(word);
         word = cut(word);
         vowels = vowelsCount(word);
-        consonants = consonatesCount(word);
-        letters = vowels + consonants;
+        letters = nrleterst(word);
+        consonants = letters - vowels;
         countWords(word);
         nrWords = words.size();
         longestWord = words.get(lWord());
@@ -35,7 +35,7 @@ public class Text {
         return  cvowels;
     }
 
-    public int  consonatesCount(String str){
+    public int  nrleterst(String str){
         int ccount = 0;
         for(char c: str.toCharArray())
             if((c >= 'a'&& c <= 'z'))
