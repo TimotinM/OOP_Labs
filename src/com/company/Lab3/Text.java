@@ -19,7 +19,7 @@ public class Text {
         sentences = sentencesCount(word);
         word = cut(word);
         vowels = vowelsCount(word);
-        letters = nrleterst(word);
+        letters = countLetters(word);
         consonants = letters - vowels;
         countWords(word);
         nrWords = words.size();
@@ -35,7 +35,7 @@ public class Text {
         return  cvowels;
     }
 
-    public int  nrleterst(String str){
+    public int  countLetters(String str){
         int ccount = 0;
         for(char c: str.toCharArray())
             if((c >= 'a'&& c <= 'z'))
