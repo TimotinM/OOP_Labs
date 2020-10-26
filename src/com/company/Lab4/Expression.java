@@ -16,20 +16,18 @@ public class Expression {
     public boolean checkExpression()
     {
         for (char c: expression.toCharArray()) {
-            if (c == '(')
+            if (c == '(' || c == '[' || c == '{')
                stack.push(c);
-            if (c == ')'){
-                if (stack.empty())
-                    return false;
-                else
-                    stack.pop();
-            }
+            if (c == ')' && (stack.empty() || stack.pop() != '('))
+              return false;
+            if (c == ']' && (stack.empty() || stack.pop() != '['))
+                return false;
+            if (c == '}' && (stack.empty() || stack.pop() != '{'))
+                return false;
         }
         if (!stack.empty()) {
             return  false;
         }
         return true;
     }
-
-
 }
