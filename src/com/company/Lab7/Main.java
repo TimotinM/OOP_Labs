@@ -19,7 +19,23 @@ public class Main {
         System.out.println("Best Area "+figureController.getBestArea());
         System.out.println("Best Perimeter "+figureController.getBestPerimeter());
 
-        Circle circle = new Circle(7);
+        Figure circle = new Figure() {
+            private double radius;
+
+            Figure init(double radius){
+                this.radius = radius;
+                return this;
+            }
+            @Override
+            float getArea() {
+                return (float) (Math.PI * radius * radius);
+            }
+
+            @Override
+            float getPerimeter() {
+                return (float) (2 * Math.PI * radius);
+            }
+        }.init(4);
         System.out.println("Circle Area "+circle.getArea());
         System.out.println("Circle Perimeter "+circle.getPerimeter());
 
@@ -27,25 +43,6 @@ public class Main {
         figureController.Analyse(figures);
         System.out.println("Best Area "+figureController.getBestArea());
         System.out.println("Best Perimeter "+figureController.getBestPerimeter());
-    }
-}
-
-class Circle extends Figure{
-    private double radius;
-
-    Circle(){}
-
-    Circle(double radius){
-        this.radius=radius;
-    }
-    @Override
-    float getArea() {
-        return (float) (Math.PI*radius);
-    }
-
-    @Override
-    float getPerimeter() {
-        return (float) (2*Math.PI*radius);
     }
 }
 
