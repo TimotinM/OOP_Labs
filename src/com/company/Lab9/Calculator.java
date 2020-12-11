@@ -33,7 +33,7 @@ public class Calculator {
             default -> throw new OperandException();
         };
 
-        if (res == 13.0) {
+        if (numberFloat2 == 13.0) {
             throw new UnluckyException();
         }
         result.setText(String.valueOf(res));
